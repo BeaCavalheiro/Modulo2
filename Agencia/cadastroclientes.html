@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="HT.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!--inicio cabeçalho sendo logo + carrosel de imagens-->
+        <header class="row">
+             <!--logo -->
+            <div class="logo offset-2 ">
+                <img src="../imagens/logo-trans.png" alt="">
+            </div>
+             <!--carrosel de imagens-->
+            <div id="carouselExampleCaptions" class="carousel slide col-10 offset-1" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../imagens/verão.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Férias de Verão</h5>
+                            <p class="bg">Para os APAIXONADOS por calor</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/inverno.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Férias de inverno</h5>
+                            <p class="bg">Os melhores destinos para os Amantes do Frio.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/form.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Formatura</h5>
+                            <p class="bg">Comemorar em alto estilo é com a Happy Traveller.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/relig.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Religiosos</h5>
+                            <p class="bg">A fé não tem fronteiras</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/nacio.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Nacionais</h5>
+                            <p class="bg">Os destinos mais buscados em Território Nacional</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/inter.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Internacionais</h5>
+                            <p class="bg">De asas a sua imaginação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--fim cabeçalho-->
+
+        <!--inicio menu de navegação link para os perfis de viagem-->
+        <nav class=" container-fluid navbar navbar-light bg-light">
+            <div class="container-fluid menufixo">
+                <a class="navbar-brand" href="#">
+                    <!--  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>-->
+                    <!--aqui é o botão amburguer-->
+                    <img src="../imagens/icon-trans.png" alt="" width="80px" height="50px"
+                        class="d-inline-block align-text-top ">
+                    <h6>Happy Traveller</h6>
+                    <a href="index.html">HOME</a>
+                    <a href="nacionais.html">Destinos Nacionais</a>
+                    <a href="internacionais.html">Destinos Internacionais</a>
+                    <a href="">Apaixonados por Calor</a>
+                    <a href="">Amantes do Frio</a>
+                    <a href="">Religioso</a>
+                    <a href="">Formatura</a>
+                </a>
+            </div>
+        </nav>
+        <!--fim menu de navegação-->
+
+        <!--inicio area home com aside(ancora para mesma pagina/titulos) e conteudo principal-->
+        <main class="container-fluid flex">
+            <aside class="col-3">
+
+                <Ul>
+                    <h3> HOME</h3>
+                    <hr>
+                    <li>quem somos</li>
+                    <li><a href="index.html/">nossos valores</a> </li>
+                    <li>fale conosco</li>
+                    <li>trabalhe conosco</li>
+                </Ul>
+
+            </aside>
+            <article class="col-9 ">
+                <H1 id="quemsomos">Quem Somos</H1>
+                <hr>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis accusamus vitae alias odio minima
+                    impedit! Velit, ea. Quaerat exercitationem sapiente necessitatibus magni placeat inventore dolorem,
+                    ea, praesentium, laborum eos qui.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, provident minus fuga temporibus
+                    reiciendis molestiae molestias sit, mollitia dignissimos nesciunt, reprehenderit magnam ea iusto
+                    enim suscipit ad ipsam nam ab?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quos error nesciunt ratione eum
+                    sapiente pariatur possimus voluptatibus voluptas optio, rem ad recusandae vel, porro quia deleniti
+                    iusto tenetur molestiae.</p>
+
+
+                <h2 id="nossosvalores"> Nossos Valores </h2>
+                <hr>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis accusamus vitae alias odio minima
+                    impedit! Velit, ea. Quaerat exercitationem sapiente necessitatibus magni placeat inventore dolorem,
+                    ea, praesentium, laborum eos qui.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, provident minus fuga temporibus
+                    reiciendis molestiae molestias sit, mollitia dignissimos nesciunt, reprehenderit magnam ea iusto
+                    enim suscipit ad ipsam nam ab?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quos error nesciunt ratione eum
+                    sapiente pariatur possimus voluptatibus voluptas optio, rem ad recusandae vel, porro quia deleniti
+                    iusto tenetur molestiae.</p>
+
+                <h2>Fale conosco</h2>
+                <hr>
+                <Form>
+                    <table>
+                        <tr>
+                            <td><label for="nome:">Nome:</label></td>
+                            <td><input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">E-mail:</label></td>
+                            <td><input type="email" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Assunto">Assunto</label></td>
+                            <td><select name="Assunto">
+                                    <option value="valor1" selected>Dúvidas</option>
+                                    <option value="valor2">Sugestões</option>
+                                    <option value="valor3">Reclamações</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td><label for="texto"></label>Digite Aqui:</td>
+                            <td> <textarea name="digite aqui" id="" cols="40" rows="5" maxlength="300"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input class="btn btn-primary" type="submit" value="Enviar"></td>
+                        </tr>
+
+
+
+
+                    </table>
+                </Form>
+
+                <h2> Trabalhe conosco</h2>
+                <hr>
+                <form action="curriculo">
+                    <h5>Preencha os campos a seguir:</h5>
+
+                    <table style="width:80%; text-align: justify; margin-top: 20px;">
+                        <tr>
+                            <td><label for="nome:">Nome:</label></td>
+                            <td class="camp"><input type="text" name="" id="" width="100%"></td>
+
+                        </tr>
+                        <tr>
+                            <td><label for="snome:">Sobrenome:</label></td>
+                            <td class="camp"><input type="text" name="" id=""></td>
+
+                        </tr>
+                        <tr>
+                            <td><label for="email">E-mail:</label></td>
+                            <td class="camp"><input type="email" name="" id=""></td>
+
+                        </tr>
+                        <tr>
+                            <td><label for="Telefone">Telefone:</label></td>
+                            <td class="camp"><input type="tel" name="" id="">
+
+                        </tr>
+                        <tr>
+                            <td><label for="Cargo">Vagas:</label></td>
+                            <td class="camp"><select name="Assunto">
+                                    <option value="valor1" selected>Telemarketing</option>
+                                    <option value="valor2">RH</option>
+                                    <option value="valor3">back-end sênior</option>
+                                </select></td>
+
+                        </tr>
+                        <tr>
+                            <td><label for="texto"></label>Curriculum:</td>
+                            <td><input type="file" name="" id="">
+
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><label for="midias">Midias:</label></td>
+                            <td colspan="2" class="camp"><i class="fa fa-facebook-square"></i><strong>Facebook
+                                </strong><input type="url" name="" id="">
+
+                        </tr>
+                        <tr>
+                            <td colspan="" class="camp"><i class="fa fa-instagram"
+                                    aria-hidden="true"></i><strong>Instagram
+                                </strong><input type="url" name="" id=""></td>
+                        </tr>
+                        <tr>
+
+                            <td class="camp"><i class="fa fa-linkedin-square"></i><strong>linkedin </strong><input
+                                    type="url" name="" id=""></td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input class="btn btn-primary" type="submit" value="Enviar">
+                                <input class="btn btn-primary" type="reset" value="Limpar">
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </form>
+            </article>
+
+        </main>
+        !--fim do home-->
+
+        !--inicio rodapé-->
+        <footer>
+            <div id="foot"><img src="../imagens/logo.png" alt=""></div>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae delectus quis eum doloribus eveniet,
+                    ipsum nostrum esse quam pariatur cumque, unde laudantium inventore dolorum mollitia nam modi amet,
+                    quos nulla?</p>
+            </div>
+            <section>
+                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui corrupti aliquid eligendi earum magnam
+                    molestiae accusamus illum, omnis laboriosam reprehenderit ipsa consequatur sunt perspiciatis
+                    doloremque reiciendis repellendus saepe odit architecto?</p>
+            </section>
+            <section>
+                <p> Telefone:(xx)98888-6699</p>
+                <p> Instagram: @HappyTraveller</p>
+            </section>
+        </footer>
+        !--fim rodapé-->
+    </div>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
