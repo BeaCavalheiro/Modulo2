@@ -100,49 +100,55 @@ fimprocedimento
 procedimento buscar()
 inicio
    limpatela
-   para  i de 0 ate 10 faca
-      escreval("para encontrar os dados desejados insira")
-      escreva("Nome: ")
-      leia (b1)
-      escreva("Sobrenome:")
-      leia (b2)
-      se (b1=cliente[l,1])e(b2=cliente[l,2]) entao
+   escreval("para encontrar os dados desejados insira")
+   escreva("Nome: ")
+   leia (b1)
+   escreva("Sobrenome:")
+   leia (b2)
+   achou<-0
+   para c de 0 ate 10 faca
+         se (b1=cliente[c,1])e(b2=cliente[c,2]) entao
+         achou<- 1
          limpatela
-         i<-l
          escreval("                   ---  Happy Treveller  --- ")
          escreval("")
          escreval("")
          escreval ("  --- Dados do Cliente ---   ")
          escreval("")
          escreval("")
-         escreval("Cliente: " + cliente[l,2] + "," +cliente[l,1] )
-         escreval("CPF: "+ cliente[l,3])
-         escreval("Endereço: " + cliente[l,4] + " , " + cliente[l,5]+ " - " + cliente[l,6] )
-         escreval("Telefone: " + cliente[l,7] )
+         escreval("Cliente: " + cliente[c,2] + "," +cliente[c,1] )
+         escreval("CPF: "+ cliente[c,3])
+         escreval("Endereço: " + cliente[c,4] + " , " + cliente[c,5]+ " - " + cliente[c,6] )
+         escreval("Telefone: " + cliente[c,7] )
          escreval("")
          escreval("")
          escreval ("  --- Dados da viagem ---   ")
          escreval("")
          escreval("")
-         escreval("Origem: " + viagem[i,1] + "    Destino:" +viagem[i,2] )
-         escreval("Saída: " + viagem[i,3] + "       Retorno: " + viagem[i,4] )         escreval("Telefone: " + cliente[l,7] )
-      senao
-         escreval("cliente não encontrado")
+         escreval("Origem: " + viagem[c,1] + "    Destino:" + viagem[c,2] )
+         escreval("Saída: " + viagem[c,3] + "       Retorno: " + viagem[c,4] )
       fimse
-      escreval("")
-      escreval("")
-      menu()
-      escreval("")
+
    fimpara
+   
+   se  (achou=0) entao
+      escreval("cliente não encontrado")
+   fimse
+   escreval("")
+   escreval("")
+   menu()
+   escreval("")
+
+
 fimprocedimento
 
 
 Var
    cliente:vetor[0..10,1..7] de caracter
    viagem: vetor[0..10,1..4] de caracter
-   l,i, v: inteiro
+   l,i, v, c, achou: inteiro
    opcao:inteiro
-   posicao,con:inteiro
+   posicao,con,bb:inteiro
    b1,b2: caracter
 
 
@@ -152,5 +158,5 @@ Inicio
    escreval("")
    escreval("")
    menu()
-fimescolha
+
 Fimalgoritmo
