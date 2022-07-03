@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,15 +14,14 @@
 </head>
 
 <body>
-    <p>primeiro commit</p>
     <div class="container">
         <!--inicio cabeçalho sendo logo + carrosel de imagens-->
         <header class="row">
-             <!--logo -->
+            <!--logo -->
             <div class="logo offset-2 ">
                 <img src="../imagens/logo-trans.png" alt="">
             </div>
-             <!--carrosel de imagens-->
+            <!--carrosel de imagens-->
             <div id="carouselExampleCaptions" class="carousel slide col-10 offset-1" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -90,11 +89,6 @@
         <nav class=" container-fluid navbar navbar-light bg-light">
             <div class="container-fluid menufixo">
                 <a class="navbar-brand" href="#">
-                    <!--  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>-->
-                    <!--aqui é o botão amburguer-->
                     <img src="../imagens/icone-trans.png" alt="" width="80px" height="50px"
                         class="d-inline-block align-text-top ">
                     <h6>Happy Traveller</h6>
@@ -114,44 +108,195 @@
 
         <!--inicio area home com aside(ancora para mesma pagina/titulos) e conteudo principal-->
         <main class="row">
-            <aside class="col-2">
+            <aside class="col-3">
 
                 <Ul>
                     <h3> HOME</h3>
                     <hr>
-                    <li><p> Cadastre-se </p></li>
-                    <li><p> Login</p></li>
-                    <li><p><a href="index.html/"><strong>PROMOÇÕES</strong></a> </p></li>
-                    <li><p> Passagens</p></li>
-                    <li><p> Hóteis</p></li>
+                    <li>
+                        <p> Cadastre-se </p>
+                    </li>
+                    <li>
+                        <p> Login</p>
+                    </li>
+                    <li>
+                        <p><a href="index.html/"><strong>PROMOÇÕES</strong></a> </p>
+                    </li>
+                    <li>
+                        <p> Passagens</p>
+                    </li>
+                    <li>
+                        <p> Hóteis</p>
+                    </li>
                 </Ul>
 
             </aside>
             <article class="col-9 ">
-                <H1 id="quemsomos">Quem Somos</H1>
-                <hr>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis accusamus vitae alias odio minima
-                    impedit! Velit, ea. Quaerat exercitationem sapiente necessitatibus magni placeat inventore dolorem,
-                    ea, praesentium, laborum eos qui.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, provident minus fuga temporibus
-                    reiciendis molestiae molestias sit, mollitia dignissimos nesciunt, reprehenderit magnam ea iusto
-                    enim suscipit ad ipsam nam ab?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quos error nesciunt ratione eum
-                    sapiente pariatur possimus voluptatibus voluptas optio, rem ad recusandae vel, porro quia deleniti
-                    iusto tenetur molestiae.</p>
+                <!-- Promos -->
+                <section class="row justify-content-around">
+                    <H1 id="Promocoes">PROMOÇÕES</H1>
+                    <hr>
+                    <!--card 1 -->
+                    <div class="card" style="width: 18rem;">
+                        <img src="../imagens/promo-disney.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="false" aria-controls="flush-collapseOne">
+                                            <strong>Disney</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Placeholder content for this accordion, which is
+                                            intended to demonstrate the <code>.accordion-flush</code> class. This is the
+                                            first item's accordion body.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            <strong>Datas</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Placeholder content for this accordion, which is
+                                            intended to demonstrate the <code>.accordion-flush</code> class. This is the
+                                            second item's accordion body. Let's imagine this being filled with some
+                                            actual content.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            aria-expanded="false" aria-controls="flush-collapseThree">
+                                            <strong>Preços</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Placeholder content for this accordion, which is
+                                            intended to demonstrate the <code>.accordion-flush</code> class. This is the
+                                            third item's accordion body. Nothing more exciting happening here in terms
+                                            of content, but just filling up the space to make it look, at least at first
+                                            glance, a bit more representative of how this would look in a real-world
+                                            application.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- card 2-->
+                    <div class="card" style="width: 18rem;">
+                        <img src="../imagens/prom-cancun.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text"><div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <strong>Cancún</strong> 
+                                </button>
+                              </h2>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    <strong>Datas</strong> 
+                                </button>
+                              </h2>
+                              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    <strong>Preços</strong> 
+                                </button>
+                              </h2>
+                              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                          </div></p>
+                        </div>
+                      </div>
+                      <!-- card 3 -->
+                      <div class="card" style="width: 18rem;">
+                        <img src="../imagens/prom-paris.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-text"><div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <strong>Paris</strong> 
+                                </button>
+                              </h2>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    <strong>Datas</strong> 
+                                </button>
+                              </h2>
+                              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    <strong>Preços</strong> 
+                                </button>
+                              </h2>
+                              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                              </div>
+                            </div>
+                          </div></p>
+                        </div>
+                      </div>
+                      <!--card lateral
+                      <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="../imagens/prom-disney.jpg" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+                      <div class="card mb-3">
+                        <img src="../imagens/promo-disney.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                </section>
 
 
-                <h2 id="nossosvalores"> Nossos Valores </h2>
-                <hr>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis accusamus vitae alias odio minima
-                    impedit! Velit, ea. Quaerat exercitationem sapiente necessitatibus magni placeat inventore dolorem,
-                    ea, praesentium, laborum eos qui.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, provident minus fuga temporibus
-                    reiciendis molestiae molestias sit, mollitia dignissimos nesciunt, reprehenderit magnam ea iusto
-                    enim suscipit ad ipsam nam ab?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quos error nesciunt ratione eum
-                    sapiente pariatur possimus voluptatibus voluptas optio, rem ad recusandae vel, porro quia deleniti
-                    iusto tenetur molestiae.</p>
 
                 <h2>Fale conosco</h2>
                 <hr>

@@ -81,6 +81,11 @@ background-color: rgba(94, 94, 94, 0.548);
     position: absolute;
     z-index: 10;
 }
+.accordion-button ::first-letter {
+
+    color: #f28705;
+
+}
 
 article>p{
     text-align: justify;
