@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Traveller</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+    <div class="container">
+        <!--inicio cabeçalho sendo logo + carrosel de imagens-->
+        <header class="row">
+            <!--logo -->
+            <div class="logo offset-2 ">
+                <img src="../imagens/logo-trans.png" alt="">
+            </div>
+            <!--carrosel de imagens-->
+            <div id="carouselExampleCaptions" class="carousel slide col-10 offset-1" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../imagens/verão.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Férias de Verão</h5>
+                            <p class="bg">Para os APAIXONADOS por calor</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/inverno.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Férias de inverno</h5>
+                            <p class="bg">Os melhores destinos para os Amantes do Frio.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/form.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Formatura</h5>
+                            <p class="bg">Comemorar em alto estilo é com a Happy Traveller.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/relig.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Religiosos</h5>
+                            <p class="bg">A fé não tem fronteiras</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/nacio.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Nacionais</h5>
+                            <p class="bg">Os destinos mais buscados em Território Nacional</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagens/inter.png" class="d-block w-100" alt="..." class="tam">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="bg">Internacionais</h5>
+                            <p class="bg">De asas a sua imaginação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!--fim cabeçalho-->
+
+  <!--inicio menu de navegação link para os perfis de viagem-->
+  <div class="container-fluid">
+    <nav class=" navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"> <img src="../imagens/icone-trans.png" alt="" width="80px"
+                    height="50px" class="d-inline-block align-text-top ">
+                <h6>Happy Traveller</h6>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link alter" href="#">PROMOÇÕES</a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle active" href="nacionais.html" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nacionais
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Mais Procurados</a></li>
+                            <li><a class="dropdown-item" href="#">Apaixonados por Calor</a></li>
+                            <li><a class="dropdown-item" href="#">Amantes do frio</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Internacionais
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Mais Procurados</a></li>
+                            <li><a class="dropdown-item" href="#">Apaixonados por Calor</a></li>
+                            <li><a class="dropdown-item" href="#">Amantes do frio</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Pacotes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Cruzeiros</a></li>
+                            <li><a class="dropdown-item" href="#">Religiosos</a></li>
+                            <li><a class="dropdown-item" href="#">Formatura</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="index.html">Fale Conosco</a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a class="nav-link active" aria-current="page" href="index.html">Trabalhe Conosco</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div> 
+<!--fim menu de navegação-->
+    <div class="container">
+
+        <!-- cadastro -->
+        <main class="row justify-content-around">
+            <h1> Cadastro </h1>
+            <hr>
+            <Form>
+                <table>
+                    <tr>
+                        <td><label for="nome:">Nome:</label></td>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">E-mail:</label></td>
+                        <td><input type="email" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Assunto">Assunto</label></td>
+                        <td><select name="Assunto">
+                                <option value="valor1" selected>Dúvidas</option>
+                                <option value="valor2">Sugestões</option>
+                                <option value="valor3">Reclamações</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="texto"></label>Digite Aqui:</td>
+                        <td> <textarea name="digite aqui" id="" cols="40" rows="5" maxlength="300"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="btn btn-primary" type="submit" value="Enviar"></td>
+                    </tr>
+
+
+
+
+                </table>
+            </Form>            
+        </main>
+        <!--fim cadastro-->
+
+        <!--inicio rodapé-->
+        <footer>
+            <div id="foot"><img src="../imagens/logo.png" alt=""></div>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae delectus quis eum doloribus eveniet,
+                    ipsum nostrum esse quam pariatur cumque, unde laudantium inventore dolorum mollitia nam modi amet,
+                    quos nulla?</p>
+            </div>
+            <section>
+                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui corrupti aliquid eligendi earum magnam
+                    molestiae accusamus illum, omnis laboriosam reprehenderit ipsa consequatur sunt perspiciatis
+                    doloremque reiciendis repellendus saepe odit architecto?</p>
+            </section>
+            <section>
+                <p> Telefone:(xx)98888-6699</p>
+                <p> Instagram: @HappyTraveller</p>
+            </section>
+        </footer>
+        <!--fim rodapé-->
+    </div>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
