@@ -4,7 +4,9 @@ header {
 
 
 }
-
+main{
+    display: flex;
+}
 .flex {
     display: flex;
 }
@@ -26,10 +28,6 @@ header {
 .logo>img {
     margin-top: 5%;
     width: 30%;
-}
-
-.navbar {
-    flex-wrap: wrap;
 }
 
 .dropdown-item {
@@ -99,7 +97,6 @@ article {
 
 }
 
-
 .fe::first-letter {
     color: #034c8c;
     margin-top: 10px;
@@ -112,38 +109,26 @@ text-decoration: none;
 }
 
 section>h2 {
-    padding-top: 20px;
     margin-top: 10px;
     color: #f28705;
 }
-.baca{
-    background-color: #034c8c1d;
-}
-.bacl{
-    background-color: #f287051d;
-}
-
-.nowarp{
-    position: relative;
-    list-style: none;
-    display: flex;
-    overflow-x: auto;   
- }
-
-
-.accordion-button ::first-letter {
-
-    color: #f28705;
-
-}
-
-.btn-primary{
-    background-color : #034c8c!important;
- }
- 
-article>p {
+section>p{
+    padding: 20px;
+    margin: auto;
     text-align: justify;
 }
+input{
+    margin-left: 15px;
+    border-radius: 5px;
+}
+input:focus{
+ background-color: #f287053b;
+ box-shadow: 3px 3px  #034c8c75  ;
+}
+.btn-primary{
+   background-color : #034c8c!important;
+}
+
 
 h6 {
     color: #f2b705;

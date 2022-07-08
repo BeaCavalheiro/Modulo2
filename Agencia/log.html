@@ -86,7 +86,7 @@
     </div>
     <!--fim cabeçalho-->
 
-   <!--inicio menu de navegação link para os perfis de viagem-->
+   <!--inicio navbar-->
    <div class="container-fluid">
     <nav class=" navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -142,10 +142,10 @@
                         </ul>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page" href="index.html">Fale Conosco</a>
+                        <a class="nav-link active" aria-current="page" href="FC.html">Fale Conosco</a>
                     </li>
                     <li class="nav-item  ">
-                        <a class="nav-link active" aria-current="page" href="index.html">Trabalhe Conosco</a>
+                        <a class="nav-link active" aria-current="page" href="HT.html">Trabalhe Conosco</a>
                     </li>
                 </ul>
             </div>
@@ -158,42 +158,61 @@
         <!-- login-->
         <main class="row justify-content-around">
             
-            <form>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">E-mail / Usuário</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <form class="col-12 col-lg-6 " >
+                <h1 class="mb-5">Login</h1>
+
+
+                <p class="mb-3">
+                  <label for="email_log" class="form-label">E-mail / Usuário</label>
+                  <input type="email" class="form-control" id="email_log" aria-describedby="emailHelp">
                  
-                </div>
-                <div class="mb-3">
+                </p>
+                <p class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Senha</label>
                   <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Não sou um robô</label>
-                </div>
+                </p>
+                <p class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input " id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Manter Logado</label>
+                </p>
                 <button type="submit" class="btn btn-primary">Login</button>
+                <p class="link">
+                    Ainda não tem conta?
+                    <a href="cadastro.html">Cadastre-se</a>
+                  </p>
               </form>
         </main>
         <!--fim login-->
-
+    </div>
+    <div class="fluid ">
         <!--inicio rodapé-->
-        <footer>
-            <div id="foot"><img src="../imagens/logo.png" alt=""></div>
-            <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae delectus quis eum doloribus eveniet,
-                    ipsum nostrum esse quam pariatur cumque, unde laudantium inventore dolorum mollitia nam modi amet,
-                    quos nulla?</p>
+        <footer >
+            <div id="foot" class="col-12 col-sm-6 col-lg-3" ><img src="../imagens/logo-trans.png" alt="" class=></div>
+            <div class="col-12 col-sm-6 col-lg-3 ">
+                <ul>
+                    <p><strong>Parceiros:</strong></p>
+                    <li class="foot"> Mafalda turismo</li>
+                    <li class="foot"> Papaleguas Airlines</li>
+                    <li class="foot"> Pegue o pombo S.A.</li>
+                    <li class="foot"> D.Vigarista Log</li>
+                </ul>
             </div>
-            <section>
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui corrupti aliquid eligendi earum magnam
-                    molestiae accusamus illum, omnis laboriosam reprehenderit ipsa consequatur sunt perspiciatis
-                    doloremque reiciendis repellendus saepe odit architecto?</p>
-            </section>
-            <section>
-                <p> Telefone:(xx)98888-6699</p>
-                <p> Instagram: @HappyTraveller</p>
-            </section>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <ul>
+                    <p><strong>Newsletter</strong></p>
+                    <li class="foot"> 10 destinos mais procurados</li>
+                    <li class="foot"> O que não pode faltar na sua bagagem</li>
+                    <li class="foot"> Diversão para toda familia </li>
+                    <li class="foot"> Como dar entrada no visto</li>
+                </ul>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-3 ">
+                <p><strong>Contatos:</strong></p>
+                <li class="foot"> Telefone: (xx) 98888-6699</li>
+                <li class="foot"> Instagram: @HappyTraveller</li>
+                <li class="foot"> E-mail: suamelhorviagem@happytraveller.com.br</li>
+            </div>
         </footer>
         <!--fim rodapé-->
     </div>
