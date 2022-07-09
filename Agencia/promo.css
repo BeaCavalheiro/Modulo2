@@ -22,7 +22,10 @@ header {
     position: absolute;
     z-index: 10;
 }
-
+input{
+    
+    border-radius: 5px;
+}
 .logo>img {
     margin-top: 5%;
     width: 30%;
@@ -94,6 +97,10 @@ section>h2 {
     padding-top: 20px;
     margin-top: 10px;
     color: #f28705;
+}
+.card-img-top{
+    width: 18rem;
+    height: 18rem;
 }
 .nowarp{
     position: relative;
