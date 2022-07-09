@@ -52,103 +52,76 @@ a:hover{
     color: #f28705
 
 }
-aside {
-    top: 0;
-    left: 0;
-    margin-top: 10px;
-    width: 20%;
-    padding: 10px;
-}
-
-aside>ul {
-    position: sticky;
-    top: 0;
-    left: 0;
-}
-
-ul>h3 {
-    text-align: center;
-    color: #034c8c;
-}
-
 hr {
-
     margin-top: 20px;
     margin-bottom: 50px;
 }
-
-
-
-aside>li {
-    color: #70735d;
+h3{
+    color: #f2b705;
+    font-weight: bold;
+    text-align: center;
+    
 }
-
-p {
-    text-indent: 50px
+h3:after{
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    
+    background: -webkit-linear-gradient(left, #f2b70500 0%,#f2b70552 20%,#f2b705 53%,#f2b70552 79%,#f2b70500 100%); 
+  }
+  main {
+    padding: 50px;
+    padding-left: 20px;
+    text-align: justify;
+    
 }
-
-
 article {
     padding-left: 20px;
     text-align: center;
 
 }
-
-
 .fe::first-letter {
     color: #034c8c;
     margin-top: 10px;
 
 }
-
 h1>a {
 text-decoration: none;
     color: #f28705 ;
 }
-
 section>h2 {
     padding-top: 20px;
     margin-top: 10px;
     color: #f28705;
 }
-.baca{
-    background-color: #034c8c1d;
-}
-.bacl{
-    background-color: #f287051d;
-}
-
 .nowarp{
     position: relative;
     list-style: none;
     display: flex;
-    overflow-x: auto;   
+    flex-wrap: wrap; 
+    margin: auto;
+    justify-content: space-evenly;
+    
  }
-
-
 .accordion-button ::first-letter {
 
     color: #f28705;
 
 }
-
 .btn-primary{
     background-color : #034c8c!important;
  }
- 
 article>p {
     text-align: justify;
 }
-
 h6 {
     color: #f2b705;
 }
-
 p>a {
     text-decoration: none;
     color: #70735d;
 }
-
 footer {
     padding-top: 20px;
     margin-top: 20px;
@@ -156,7 +129,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
 }
-
 #foot>img {
     height: 200px;
 }
@@ -171,3 +143,4 @@ table {
 .camp {
     text-align: left;
 }
+
