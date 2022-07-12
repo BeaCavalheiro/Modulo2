@@ -16,7 +16,17 @@ header {
 .container {
     position: relative;
 }
-
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #034c8c;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f287051d;
+}
 .logo {
     width: 100%;
     position: absolute;
