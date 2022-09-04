@@ -1,32 +1,32 @@
 package Dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import classes.Hospedagem;
+import classes.Transporte;
+import Dao.Conexao;
 
 public class TransporteDAO {
 
 	Connection conn = null;
 	PreparedStatement pstm = null;
 
-	public void save(Hospedagem h) {
+	public void save(Transporte t) {
 
-		String sql = "INSERT INTO hospedagem(id_hos,nome_hos,endereco_hos,telefone_hos,valor_hos)" + " VALUE(?,?,?,?,?)";
+		String sql = "INSERT INTO transporte (id,nome_comp,aeroporto_rodoviaria,num_embarque,valor)" + " VALUE(?,?,?,?,?)";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, h.getId());
-			pstm.setString(2, h.getNome());
-			pstm.setString(3, h.getEndereco());
-			pstm.setString(4, h.getTel());
-			pstm.setDouble(2, h.getValor());
+			pstm.setInt(1, t.getId());
+			pstm.setString(2, t.getNomeComp());
+			pstm.setString(3, t.getAerRod());
+			pstm.setString(4, t.getNumEmb());
+			pstm.setDouble(5, t.getValor());
 
 			pstm.execute();
 
@@ -46,9 +46,9 @@ public class TransporteDAO {
 		}
 	}
 
-	public void removeById(Integer id) {
+	public void removeById(int id) {
 
-		String sql = "DELETE FROM hospedagem WHERE id_hos=?";
+		String sql = "DELETE FROM transporte WHERE id=?";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
@@ -73,20 +73,19 @@ public class TransporteDAO {
 		}
 	}
 
-	public void update(Hospedagem h) {
+	public void update(Transporte t) {
 
-		String sql = "UPDATE hospedagem SET id_hos=?,nome_hos = ?,endereco_hos=?, telefone_hos = ?, valor_hos =?"
+		String sql = "UPDATE transporte SET nome_comp = ?,aeroporto_rodoviaria = ?, localizacao = ?, valor =?"
 				+ "WHERE id_hos=?";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, h.getId());
-			pstm.setString(2, h.getNome());
-			pstm.setString(3, h.getEndereco());
-			pstm.setString(4, h.getTel());
-			pstm.setDouble(5, h.getValor());
+			pstm.setString(2, t.getNomeComp());
+			pstm.setString(3, t.getAerRod());
+			pstm.setString(4, t.getNumEmb());
+			pstm.setDouble(5, t.getValor());
 
 			pstm.execute();
 
@@ -107,11 +106,11 @@ public class TransporteDAO {
 
 	}
 
-	public List<Hospedagem> getHospedagem() {
+	public List<Transporte> getTransporte() {
 
-		String sql = "SELECT * FROM hospedagem";
+		String sql = "SELECT * FROM transporte";
 
-		List<Hospedagem> hos = new ArrayList<Hospedagem>();
+		List<Transporte> trans= new ArrayList<Transporte>();
 		ResultSet rset = null;
 
 		try {
@@ -120,15 +119,15 @@ public class TransporteDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
-				Hospedagem h = new Hospedagem();
+				Transporte t = new Transporte();
 
-				h.setId(rset.getInt("id_hos"));
-				h.setNome(rset.getString("nome_hos"));
-				h.setEndereco(rset.getString("endereco_hos"));
-				h.setTel(rset.getString("telefone_hos"));
-				h.setValor(rset.getDouble("valor_hos"));
+				t.setId(rset.getInt("id"));
+				t.setNomeComp(rset.getString("nome_comp"));
+				t.setAerRod(rset.getString("aeroporto_rodoviaria"));
+				t.setNumEmb(rset.getString("num_embarque"));
+				t.setValor(rset.getDouble("valor"));
 
-				hos.add(h);
+				trans.add(t);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -147,14 +146,14 @@ public class TransporteDAO {
 				e.printStackTrace();
 			}
 		}
-		return hos;
+		return trans;
 	}
 
-	public Hospedagem hosById(Integer id) {
-		String sql = "SELECT * FROM hospedagem WHERE id_hos=?";
+	public Transporte transById(int id) {
+		String sql = "SELECT * FROM transporte WHERE id=?";
 
 		ResultSet rset = null;
-		Hospedagem h = new Hospedagem();
+		Transporte t = new Transporte();
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
@@ -163,11 +162,11 @@ public class TransporteDAO {
 			rset = pstm.executeQuery();
 			rset.next();
 
-			h.setId(rset.getInt("id_hos"));
-			h.setNome(rset.getString("nome_hos"));
-			h.setEndereco(rset.getString("endereco_hos"));
-			h.setTel(rset.getString("telefone_hos"));
-			h.setValor(rset.getDouble("valor_hos"));
+			t.setId(rset.getInt("id"));
+			t.setNomeComp(rset.getString("nome_comp"));
+			t.setAerRod(rset.getString("aeroporto_rodoviaria"));
+			t.setNumEmb(rset.getString("num_embarque"));
+			t.setValor(rset.getDouble("valor"));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -183,6 +182,6 @@ public class TransporteDAO {
 				e.printStackTrace();
 			}
 		}
-		return h;
+		return t;
 	}
 }

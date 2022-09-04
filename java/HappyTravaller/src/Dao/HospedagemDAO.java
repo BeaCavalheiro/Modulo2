@@ -1,13 +1,13 @@
 package Dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 import classes.Hospedagem;
+import Dao.Conexao;
 
 public class HospedagemDAO {
 
@@ -26,7 +26,7 @@ public class HospedagemDAO {
 			pstm.setString(2, h.getNome());
 			pstm.setString(3, h.getEndereco());
 			pstm.setString(4, h.getTel());
-			pstm.setDouble(2, h.getValor());
+			pstm.setDouble(5, h.getValor());
 
 			pstm.execute();
 
@@ -75,14 +75,14 @@ public class HospedagemDAO {
 
 	public void update(Hospedagem h) {
 
-		String sql = "UPDATE hospedagem SET id_hos=?,nome_hos = ?,endereco_hos=?, telefone_hos = ?, valor_hos =?"
+		String sql = "UPDATE hospedagem SET "
+				+ "nome_hos = ?,endereco_hos=?, telefone_hos = ?, valor_hos =?"
 				+ "WHERE id_hos=?";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, h.getId());
 			pstm.setString(2, h.getNome());
 			pstm.setString(3, h.getEndereco());
 			pstm.setString(4, h.getTel());

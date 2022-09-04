@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+file:/D:/Documentos/Recode/PROJETO%20INDIVIDUAL/modulo2/java/HappyTravaller/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
+meta_index

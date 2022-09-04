@@ -1,12 +1,13 @@
 package Dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
 import classes.Cliente;
+import Dao.Conexao;
 
 public class ClienteDAO {
 
@@ -74,14 +75,13 @@ public class ClienteDAO {
 
 	public void update(Cliente cliente) {
 
-		String sql = "UPDATE cliente SET CPF_cli=?,nome_cli = ?,endereco_cli=?, telefone_cli = ?, email_cli =?"
+		String sql = "UPDATE cliente SET nome_cli = ?,endereco_cli=?, telefone_cli = ?, email_cli =?"
 				+ "WHERE cpf_cli=?";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setString(1, cliente.getCpf());
 			pstm.setString(2, cliente.getNome());
 			pstm.setString(3, cliente.getEndereco());
 			pstm.setString(4, cliente.getTel());

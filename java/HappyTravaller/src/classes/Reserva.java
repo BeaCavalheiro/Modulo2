@@ -1,45 +1,54 @@
 package classes;
 
 public class Reserva {
-	private Integer cod;
-	private Integer entrada, saida;
+	private int cod;
+	private int entrada, saida;
 	private double total;
 	private Transporte transporte;
 	private Hospedagem hospedagem;
 	private Destino destino;
+	private Cliente cliente;
 	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public Reserva() {
 	}
 
-	public Integer getCod() {
+	public int getCod() {
 		return cod;
 	}
 
-	public void setCod(Integer cod) {
+	public void setCod(int cod) {
 		this.cod = cod;
 	}
 
-	public Integer getEntrada() {
+	public int getEntrada() {
 		return entrada;
 	}
 
-	public void setEntrada(Integer entrada) {
+	public void setEntrada(int entrada) {
 		this.entrada = entrada;
 	}
 
-	public Integer getSaida() {
+	public int getSaida() {
 		return saida;
 	}
 
-	public void setSaida(Integer saida) {
+	public void setSaida(int saida) {
 		this.saida = saida;
 	}
 
-	public Double getTotal() {
+	public double getTotal() {
 		return calcTotal();
 	}
 
-	public void setTotal(Double total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
 

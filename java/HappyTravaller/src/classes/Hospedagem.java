@@ -1,20 +1,20 @@
 package classes;
 
 public class Hospedagem {
-	private Integer id;
+	private int id;
 	private String nome;
 	private String endereco;
 	private String tel;
-	private Double valor;
+	private double valor;
 	
 	public Hospedagem() {
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -42,11 +42,11 @@ public class Hospedagem {
 		this.tel = tel;
 	}
 
-	public Double getValor() {
+	public double getValor() {
 		return valor;
 	}
 
-	public void setValor(Double valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 	

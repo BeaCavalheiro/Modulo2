@@ -1,13 +1,13 @@
 package Dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 import classes.Destino;
+import Dao.Conexao;
 
 public class DestinoDAO {
 
@@ -25,7 +25,7 @@ public class DestinoDAO {
 			pstm.setInt(1, d.getId());
 			pstm.setString(2, d.getNome());
 			pstm.setString(3, d.getLocal());
-			pstm.setDouble(2, d.getValor());
+			pstm.setDouble(4, d.getValor());
 
 			pstm.execute();
 
@@ -45,9 +45,9 @@ public class DestinoDAO {
 		}
 	}
 
-	public void removeById(Integer id) {
+	public void removeById(int id) {
 
-		String sql = "DELETE FROM hospedagem WHERE id_hos=?";
+		String sql = "DELETE FROM destino WHERE id_local=?";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
@@ -71,21 +71,18 @@ public class DestinoDAO {
 			}
 		}
 	}
+	public void update(Destino d) {
 
-	public void update(Hospedagem h) {
-
-		String sql = "UPDATE hospedagem SET id_hos=?,nome_hos = ?,endereco_hos=?, telefone_hos = ?, valor_hos =?"
-				+ "WHERE id_hos=?";
+		String sql = "UPDATE destino SET nome_local = ?,localizacao=?, valor_passeios=?"
+				+ "WHERE id_local=?";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, h.getId());
-			pstm.setString(2, h.getNome());
-			pstm.setString(3, h.getEndereco());
-			pstm.setString(4, h.getTel());
-			pstm.setDouble(5, h.getValor());
+			pstm.setString(2, d.getNome());
+			pstm.setString(3, d.getLocal());
+			pstm.setDouble(4, d.getValor());
 
 			pstm.execute();
 
@@ -106,11 +103,11 @@ public class DestinoDAO {
 
 	}
 
-	public List<Hospedagem> getHospedagem() {
+	public List<Destino> getDestino() {
 
-		String sql = "SELECT * FROM hospedagem";
+		String sql = "SELECT * FROM destino";
 
-		List<Hospedagem> hos = new ArrayList<Hospedagem>();
+		List<Destino> loc = new ArrayList<Destino>();
 		ResultSet rset = null;
 
 		try {
@@ -119,15 +116,14 @@ public class DestinoDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
-				Hospedagem h = new Hospedagem();
+				Destino d = new Destino();
 
-				h.setId(rset.getInt("id_hos"));
-				h.setNome(rset.getString("nome_hos"));
-				h.setEndereco(rset.getString("endereco_hos"));
-				h.setTel(rset.getString("telefone_hos"));
-				h.setValor(rset.getDouble("valor_hos"));
+				d.setId(rset.getInt("id_local"));
+				d.setNome(rset.getString("nome_local"));
+				d.setLocal(rset.getString("localização"));
+				d.setValor(rset.getDouble("valor_hos"));
 
-				hos.add(h);
+				loc.add(d);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -146,14 +142,14 @@ public class DestinoDAO {
 				e.printStackTrace();
 			}
 		}
-		return hos;
+		return loc;
 	}
 
-	public Hospedagem hosById(Integer id) {
-		String sql = "SELECT * FROM hospedagem WHERE id_hos=?";
+	public Destino locById(int id) {
+		String sql = "SELECT * FROM destino WHERE id_local=?";
 
 		ResultSet rset = null;
-		Hospedagem h = new Hospedagem();
+		Destino d = new Destino();
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
@@ -162,11 +158,10 @@ public class DestinoDAO {
 			rset = pstm.executeQuery();
 			rset.next();
 
-			h.setId(rset.getInt("id_hos"));
-			h.setNome(rset.getString("nome_hos"));
-			h.setEndereco(rset.getString("endereco_hos"));
-			h.setTel(rset.getString("telefone_hos"));
-			h.setValor(rset.getDouble("valor_hos"));
+			d.setId(rset.getInt("id_local"));
+			d.setNome(rset.getString("nome_local"));
+			d.setLocal(rset.getString("localizacao"));
+			d.setValor(rset.getDouble("valor_passeios"));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -182,6 +177,6 @@ public class DestinoDAO {
 				e.printStackTrace();
 			}
 		}
-		return h;
+		return d;
 	}
 }

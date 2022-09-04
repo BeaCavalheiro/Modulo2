@@ -1,27 +1,28 @@
 package classes;
 
 public class Transporte {
-	private Integer id, numEmb;
+	private int id;
 	private String nomeComp;
 	private String aerRod;
-	private Double valor;
+	private String numEmb;
+	private double valor;
 
 	public Transporte() {
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Integer getNumEmb() {
+	public String getNumEmb() {
 		return numEmb;
 	}
 
-	public void setNumEmb(Integer numEmb) {
+	public void setNumEmb(String numEmb) {
 		this.numEmb = numEmb;
 	}
 
@@ -41,11 +42,11 @@ public class Transporte {
 		this.aerRod = aerRod;
 	}
 
-	public Double getValor() {
+	public double getValor() {
 		return valor;
 	}
 
-	public void setValor(Double valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 	

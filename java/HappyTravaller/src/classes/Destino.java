@@ -1,19 +1,19 @@
 package classes;
 
 public class Destino {
-	private Integer id;
+	private int id;
 	private String nome;
 	private String local;
-	private Double valor;
+	private double valor;
 	
 	public Destino() {
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -33,11 +33,11 @@ public class Destino {
 		this.local = local;
 	}
 
-	public Double getValor() {
+	public double getValor() {
 		return valor;
 	}
 
-	public void setValor(Double valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 	
