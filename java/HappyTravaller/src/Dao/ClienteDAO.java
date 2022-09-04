@@ -82,6 +82,7 @@ public class ClienteDAO {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
+			pstm.setString(1, cliente.getCpf());
 			pstm.setString(2, cliente.getNome());
 			pstm.setString(3, cliente.getEndereco());
 			pstm.setString(4, cliente.getTel());
