@@ -7,26 +7,25 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import classes.Hospedagem;
+import classes.Destino;
 
-public class HospedagemDAO {
+public class DestinoDAO {
 
 	Connection conn = null;
 	PreparedStatement pstm = null;
 
-	public void save(Hospedagem h) {
+	public void save(Destino d) {
 
-		String sql = "INSERT INTO hospedagem(id_hos,nome_hos,endereco_hos,telefone_hos,valor_hos)" + " VALUE(?,?,?,?,?)";
+		String sql = "INSERT INTO destino(id_local,nome_local,localizacao,valor_passeios)" + " VALUE(?,?,?,?)";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, h.getId());
-			pstm.setString(2, h.getNome());
-			pstm.setString(3, h.getEndereco());
-			pstm.setString(4, h.getTel());
-			pstm.setDouble(2, h.getValor());
+			pstm.setInt(1, d.getId());
+			pstm.setString(2, d.getNome());
+			pstm.setString(3, d.getLocal());
+			pstm.setDouble(2, d.getValor());
 
 			pstm.execute();
 

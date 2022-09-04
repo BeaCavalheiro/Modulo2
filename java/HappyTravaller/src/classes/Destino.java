@@ -4,7 +4,7 @@ public class Destino {
 	private Integer id;
 	private String nome;
 	private String local;
-	private Float valor;
+	private Double valor;
 	
 	public Destino() {
 	}
@@ -33,11 +33,11 @@ public class Destino {
 		this.local = local;
 	}
 
-	public Float getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(Float valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 	

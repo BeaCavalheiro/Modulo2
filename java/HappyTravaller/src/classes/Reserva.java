@@ -3,7 +3,7 @@ package classes;
 public class Reserva {
 	private Integer cod;
 	private Integer entrada, saida;
-	private Float total;
+	private double total;
 	private Transporte transporte;
 	private Hospedagem hospedagem;
 	private Destino destino;
@@ -35,11 +35,11 @@ public class Reserva {
 		this.saida = saida;
 	}
 
-	public Float getTotal() {
+	public Double getTotal() {
 		return calcTotal();
 	}
 
-	public void setTotal(Float total) {
+	public void setTotal(Double total) {
 		this.total = total;
 	}
 
@@ -66,8 +66,8 @@ public class Reserva {
 	public void setDestino(Destino destino) {
 		this.destino = destino;
 	}
-	private float calcTotal() {
-		this.total = ((this.saida - this.entrada) * hospedagem.getValor() )+ destino.getValor()+transporte.getValor();
-		return this.total;
+	private double calcTotal() {
+		this.total= hospedagem.getValor()*(this.saida-this.entrada)+ destino.getValor()+transporte.getValor();
+		return total;
 }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 import classes.Hospedagem;
 
-public class HospedagemDAO {
+public class TransporteDAO {
 
 	Connection conn = null;
 	PreparedStatement pstm = null;

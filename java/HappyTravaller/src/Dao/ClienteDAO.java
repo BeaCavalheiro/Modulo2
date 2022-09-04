@@ -15,7 +15,7 @@ public class ClienteDAO {
 
 	public void save(Cliente cliente) {
 
-		String sql = "INSERT INTO contato(cpf_cli,nome_cli,endereco_cli,telefone_cli,email_cli)" + " VALUE(?,?,?,?,?)";
+		String sql = "INSERT INTO cliente (CPF_cli,nome_cli,endereco_cli,telefone_cli,email_cli)" + " VALUE(?,?,?,?,?)";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
@@ -25,7 +25,7 @@ public class ClienteDAO {
 			pstm.setString(2, cliente.getNome());
 			pstm.setString(3, cliente.getEndereco());
 			pstm.setString(4, cliente.getTel());
-			pstm.setString(2, cliente.getEmail());
+			pstm.setString(5, cliente.getEmail());
 
 			pstm.execute();
 
@@ -47,7 +47,7 @@ public class ClienteDAO {
 
 	public void removeByCpf(String cpf) {
 
-		String sql = "DELETE FROM contato WHERE cpf_cli=?";
+		String sql = "DELETE FROM cliente WHERE CPF_cli=?";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
@@ -74,7 +74,7 @@ public class ClienteDAO {
 
 	public void update(Cliente cliente) {
 
-		String sql = "UPDATE cliente SET cpf_cli=?,nome_cli = ?,endereco_cli=?, telefone_cli = ?, email_cli =?"
+		String sql = "UPDATE cliente SET CPF_cli=?,nome_cli = ?,endereco_cli=?, telefone_cli = ?, email_cli =?"
 				+ "WHERE cpf_cli=?";
 
 		try {
@@ -85,7 +85,7 @@ public class ClienteDAO {
 			pstm.setString(2, cliente.getNome());
 			pstm.setString(3, cliente.getEndereco());
 			pstm.setString(4, cliente.getTel());
-			pstm.setString(2, cliente.getEmail());
+			pstm.setString(5, cliente.getEmail());
 
 			pstm.execute();
 
@@ -121,7 +121,7 @@ public class ClienteDAO {
 			while (rset.next()) {
 				Cliente c = new Cliente();
 
-				c.setCpf(rset.getString("cpf_cli"));
+				c.setCpf(rset.getString("CPF_cli"));
 				c.setNome(rset.getString("nome_cli"));
 				c.setEndereco(rset.getString("endereco_cli"));
 				c.setTel(rset.getString("telefone_cli"));
@@ -149,8 +149,8 @@ public class ClienteDAO {
 		return cli;
 	}
 
-	public Cliente contatoByCpf(String cpf) {
-		String sql = "SELECT * FROM contato WHERE cpf_cli=?";
+	public Cliente cliByCpf(String cpf) {
+		String sql = "SELECT * FROM cliente WHERE CPF_cli=?";
 
 		ResultSet rset = null;
 		Cliente cliente = new Cliente();
@@ -162,7 +162,7 @@ public class ClienteDAO {
 			rset = pstm.executeQuery();
 			rset.next();
 
-			cliente.setCpf(rset.getString("cpf_cli"));
+			cliente.setCpf(rset.getString("CPF_cli"));
 			cliente.setNome(rset.getString("nome_cli"));
 			cliente.setEndereco(rset.getString("endereco_cli"));
 			cliente.setTel(rset.getString("telefone_cli"));
