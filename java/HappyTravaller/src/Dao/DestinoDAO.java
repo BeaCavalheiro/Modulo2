@@ -16,16 +16,15 @@ public class DestinoDAO {
 
 	public void save(Destino d) {
 
-		String sql = "INSERT INTO destino(id_local,nome_local,localizacao,valor_passeios)" + " VALUE(?,?,?,?)";
+		String sql = "INSERT INTO destino(nome_local,localizacao,valor_passeios)" + " VALUE(?,?,?)";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, d.getId());
-			pstm.setString(2, d.getNome());
-			pstm.setString(3, d.getLocal());
-			pstm.setDouble(4, d.getValor());
+			pstm.setString(1, d.getNome());
+			pstm.setString(2, d.getLocal());
+			pstm.setDouble(3, d.getValor());
 
 			pstm.execute();
 
@@ -80,9 +79,10 @@ public class DestinoDAO {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setString(2, d.getNome());
-			pstm.setString(3, d.getLocal());
-			pstm.setDouble(4, d.getValor());
+			pstm.setString(1, d.getNome());
+			pstm.setString(2, d.getLocal());
+			pstm.setDouble(3, d.getValor());
+			pstm.setInt(4, d.getId());
 
 			pstm.execute();
 

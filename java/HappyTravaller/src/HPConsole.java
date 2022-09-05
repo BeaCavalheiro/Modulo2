@@ -9,18 +9,17 @@ import Dao.ClienteDAO;
 import Dao.DestinoDAO;
 import Dao.ReservaDAO;
 import Dao.TransporteDAO;
-import Dao.Conexao;
+
 
 
 public class HPConsole {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+			
 		ClienteDAO clienteDAO = new ClienteDAO();
 		HospedagemDAO hospedagemDAO = new HospedagemDAO();
 		ReservaDAO reservaDAO = new ReservaDAO();
-		TransporteDAO passagemDAO = new TransporteDAO();
+		TransporteDAO transporteDAO = new TransporteDAO();
 		DestinoDAO destinoDAO = new DestinoDAO();
 		Scanner entrada = new Scanner(System.in);
 		Cliente cliente = new Cliente();
@@ -32,6 +31,9 @@ public class HPConsole {
 		int menu;
 		int cli;
 		int hos;
+		int tran;
+		int des;
+		int res;
 		
 		
 		do {
@@ -53,7 +55,7 @@ public class HPConsole {
 					System.out.println("3 - Atualizar ");
 					System.out.println("4 - Mostrar ");
 					System.out.println("5 - Buscar Cliente");
-					System.out.println("0 - Sair");
+					System.out.println("0 - Voltar");
 					cli = entrada.nextInt();
 					switch (cli) {
 					case 1:
@@ -76,8 +78,7 @@ public class HPConsole {
 						clienteDAO.removeByCpf(entrada.next());
 						break;
 					case 3:
-						System.out.println("Digite o CPF:");
-						cliente.setCpf(entrada.next());
+						
 						System.out.println("Digite o Nome:");
 						cliente.setNome(entrada.next());
 						System.out.println("Digite a Endereço:");
@@ -86,7 +87,9 @@ public class HPConsole {
 						cliente.setTel(entrada.next());
 						System.out.println("Digite o E-mail:");
 						cliente.setEmail(entrada.next());
-
+						System.out.println("Digite o CPF:");
+						cliente.setCpf(entrada.next());
+						
 						clienteDAO.update(cliente);
 						break;
 
@@ -94,21 +97,23 @@ public class HPConsole {
 						for (Cliente c : clienteDAO.getCliente()) {
 							System.out.println("CPF: " + c.getCpf());
 							System.out.println("NOME: " + c.getNome());
-							System.out.println("ENDEREÇO: " + c.getDataCadastro());
-							System.out.println("TEL: " + c.getNome());
-							System.out.println("EMAIL: " + c.getIdade());
+							System.out.println("ENDEREÇO: " + c.getEndereco());
+							System.out.println("TEL: " + c.getTel());
+							System.out.println("EMAIL: " + c.getEmail());
 							System.out.println("----------------------------------- ");
 						}
 						break;
 					case 5:
-						System.out.println("Digite o ID:");
-						int id = entrada.nextInt();
+						System.out.println("Digite o CPF:");
+						String cpf = entrada.next();
 						
-						Contato c = contatoDAO.contatoById(id);
+						Cliente c = clienteDAO.cliByCpf(cpf);
 						
+						System.out.println("CPF: " + c.getCpf());
 						System.out.println("NOME: " + c.getNome());
-						System.out.println("IDADE: " + c.getIdade());
-						System.out.println("DATA CADASTRO: " + c.getDataCadastro());
+						System.out.println("ENDEREÇO: " + c.getEndereco());
+						System.out.println("TEL: " + c.getTel());
+						System.out.println("EMAIL: " + c.getEmail());
 						System.out.println("----------------------------------- ");
 						break;
 					case 0:
@@ -118,282 +123,326 @@ public class HPConsole {
 						System.out.println("Opcao invalida!");
 						break;
 					}
-				} while (agenda != 0);
+				} while (cli != 0);
 
 				break;
 			case 2:
 				do {
-					System.out.println("========== Clientes ==========");
-					System.out.println("1 - Adicionar ");
-					System.out.println("2 - Remover ");
-					System.out.println("3 - Atualizar ");
-					System.out.println("4 - Mostrar ");
-					System.out.println("5 - Buscar Cliente");
-					System.out.println("0 - Sair");
-					agenda = entrada.nextInt();
-					switch (cli) {
-					case 1:
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
+				System.out.println("========== Hospedagem ==========");
+				System.out.println("1 - Adicionar ");
+				System.out.println("2 - Remover ");
+				System.out.println("3 - Atualizar ");
+				System.out.println("4 - Mostrar ");
+				System.out.println("5 - Buscar Hospedagens");
+				System.out.println("0 - Sair");
+				hos = entrada.nextInt();
+				switch (hos) {
+				case 1:
 
-						contatoDAO.save(contato);
+					System.out.println("Digite o Nome:");
+					hospedagem.setNome(entrada.next());
+					System.out.println("Digite a Endereço:");
+					hospedagem.setEndereco(entrada.next());
+					System.out.println("Digite um Telefone:");
+					hospedagem.setTel(entrada.next());
+					System.out.println("Digite o Valor da Diaria");
+					hospedagem.setValor(entrada.nextDouble());
+					
+					hospedagemDAO.save(hospedagem);
 
-						break;
-					case 2:
-						System.out.println("Digite o ID que sera deletado:");
-						contatoDAO.removeById(entrada.nextInt());
-						break;
-					case 3:
-						System.out.println("Digite o ID do contato:");
-						contato.setId(entrada.nextInt());
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
+					break;
+				case 2:
+					System.out.println("Digite o ID que sera deletado:");
+					hospedagemDAO.removeById(entrada.nextInt());
+					break;
+				case 3:
+					
+					System.out.println("Digite o Nome:");
+					hospedagem.setNome(entrada.next());
+					System.out.println("Digite a Endereço:");
+					hospedagem.setEndereco(entrada.next());
+					System.out.println("Digite um Telefone:");
+					hospedagem.setTel(entrada.next());
+					System.out.println("Digite o Valor da Diaria:");
+					hospedagem.setValor(entrada.nextDouble());
+					System.out.println("Digite o id:");
+					hospedagem.setId(entrada.nextInt());
+					
+					hospedagemDAO.update(hospedagem);
+					break;
 
-						contatoDAO.update(contato);
-						break;
-
-					case 4:
-						for (Contato c : contatoDAO.getContatos()) {
-							System.out.println("NOME: " + c.getNome());
-							System.out.println("IDADE: " + c.getIdade());
-							System.out.println("DATA CADASTRO: " + c.getDataCadastro());
-							System.out.println("----------------------------------- ");
-						}
-						break;
-					case 5:
-						System.out.println("Digite o ID:");
-						int id = entrada.nextInt();
-						
-						Contato c = contatoDAO.contatoById(id);
-						
-						System.out.println("NOME: " + c.getNome());
-						System.out.println("IDADE: " + c.getIdade());
-						System.out.println("DATA CADASTRO: " + c.getDataCadastro());
+				case 4:
+					for (Hospedagem h : hospedagemDAO.getHospedagem()) {
+						System.out.println("ID: " + h.getId());
+						System.out.println("NOME: " + h.getNome());
+						System.out.println("ENDEREÇO: " + h.getEndereco());
+						System.out.println("TEL: " + h.getTel());
+						System.out.println("Diaria: " + h.getValor());
 						System.out.println("----------------------------------- ");
-						break;
-					case 0:
-						System.out.println("Ate logo!");
-						break;
-					default:
-						System.out.println("Opcao invalida!");
-						break;
 					}
-				} while (agenda != 0);
+					break;
+				case 5:
+					System.out.println("Digite o Id:");
+					int id = entrada.nextInt();
+					
+					Hospedagem h = hospedagemDAO.hosById(id);
+					
+					System.out.println("ID: " + h.getId());
+					System.out.println("NOME: " + h.getNome());
+					System.out.println("ENDEREÇO: " + h.getEndereco());
+					System.out.println("TEL: " + h.getTel());
+					System.out.println("Diaria: " + h.getValor());
+					System.out.println("----------------------------------- ");
+					break;
+				case 0:
+					System.out.println("Ate logo!");
+					break;
+				default:
+					System.out.println("Opcao invalida!");
+					break;
+				}
+			} while (hos != 0);
 
-				break;
+			break;
 			case 3:
 				do {
-					System.out.println("========== Clientes ==========");
-					System.out.println("1 - Adicionar ");
-					System.out.println("2 - Remover ");
-					System.out.println("3 - Atualizar ");
-					System.out.println("4 - Mostrar ");
-					System.out.println("5 - Buscar Cliente");
-					System.out.println("0 - Sair");
-					agenda = entrada.nextInt();
-					switch (cli) {
-					case 1:
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
+				System.out.println("========== Transportes ==========");
+				System.out.println("1 - Adicionar ");
+				System.out.println("2 - Remover ");
+				System.out.println("3 - Atualizar ");
+				System.out.println("4 - Mostrar ");
+				System.out.println("5 - Buscar Transporte");
+				System.out.println("0 - Voltar");
+				tran = entrada.nextInt();
+				switch (tran) {
+				case 1:
+					System.out.println("Digite o Nome da Companhia:");
+					transporte.setNomeComp(entrada.next());
+					System.out.println("Qual o Aeroporto/Rodoviaria?");
+					transporte.setAerRod(entrada.next());
+					System.out.println("NUM voo/embarque:");
+					transporte.setNumEmb(entrada.next());
+					System.out.println("Digite o Valor:");
+					transporte.setValor(entrada.nextDouble());
+					
+					transporteDAO.save(transporte);
 
-						contatoDAO.save(contato);
+					break;
+				case 2:
+					System.out.println("Digite o ID que sera deletado:");
+					transporteDAO.removeById(entrada.nextInt());
+					break;
+				case 3:
+					
+					System.out.println("Digite o Nome:");
+					transporte.setNome(entrada.next());
+					System.out.println("Digite a Endereço:");
+					transporte.setEndereco(entrada.next());
+					System.out.println("Digite um Telefone:");
+					transporte.setTel(entrada.next());
+					System.out.println("Digite o E-mail:");
+					transporte.setEmail(entrada.next());
+					System.out.println("Digite o id:");
+					transporte.setId(entrada.nextInt());
+					
+					hospedagemDAO.update(hospedagem);
+					break;
 
-						break;
-					case 2:
-						System.out.println("Digite o ID que sera deletado:");
-						contatoDAO.removeById(entrada.nextInt());
-						break;
-					case 3:
-						System.out.println("Digite o ID do contato:");
-						contato.setId(entrada.nextInt());
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
-
-						contatoDAO.update(contato);
-						break;
-
-					case 4:
-						for (Contato c : contatoDAO.getContatos()) {
-							System.out.println("NOME: " + c.getNome());
-							System.out.println("IDADE: " + c.getIdade());
-							System.out.println("DATA CADASTRO: " + c.getDataCadastro());
-							System.out.println("----------------------------------- ");
-						}
-						break;
-					case 5:
-						System.out.println("Digite o ID:");
-						int id = entrada.nextInt();
-						
-						Contato c = contatoDAO.contatoById(id);
-						
-						System.out.println("NOME: " + c.getNome());
-						System.out.println("IDADE: " + c.getIdade());
-						System.out.println("DATA CADASTRO: " + c.getDataCadastro());
+				case 4:
+					for (Hospedagem h : hospedagemDAO.gethospedagem()) {
+						System.out.println("CPF: " + h.getCpf());
+						System.out.println("NOME: " + h.getNome());
+						System.out.println("ENDEREÇO: " + h.getEndereco());
+						System.out.println("TEL: " + h.getTel());
+						System.out.println("EMAIL: " + h.getEmail());
 						System.out.println("----------------------------------- ");
-						break;
-					case 0:
-						System.out.println("Ate logo!");
-						break;
-					default:
-						System.out.println("Opcao invalida!");
-						break;
 					}
-				} while (agenda != 0);
+					break;
+				case 5:
+					System.out.println("Digite o CPF:");
+					int id = entrada.nextInt();
+					
+					Hospedagem h = hospedagemDAO.hosById(id);
+					
+					System.out.println("CPF: " + h.getCpf());
+					System.out.println("NOME: " + h.getNome());
+					System.out.println("ENDEREÇO: " + h.getEndereco());
+					System.out.println("TEL: " + h.getTel());
+					System.out.println("EMAIL: " + h.getEmail());
+					System.out.println("----------------------------------- ");
+					break;
+				case 0:
+					System.out.println("Ate logo!");
+					break;
+				default:
+					System.out.println("Opcao invalida!");
+					break;
+				}
+			} while (tran != 0);
 
-				break;
-			case 4:
-				do {
-					System.out.println("========== Clientes ==========");
-					System.out.println("1 - Adicionar ");
-					System.out.println("2 - Remover ");
-					System.out.println("3 - Atualizar ");
-					System.out.println("4 - Mostrar ");
-					System.out.println("5 - Buscar Cliente");
-					System.out.println("0 - Sair");
-					agenda = entrada.nextInt();
-					switch (cli) {
-					case 1:
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
-
-						contatoDAO.save(contato);
-
-						break;
-					case 2:
-						System.out.println("Digite o ID que sera deletado:");
-						contatoDAO.removeById(entrada.nextInt());
-						break;
-					case 3:
-						System.out.println("Digite o ID do contato:");
-						contato.setId(entrada.nextInt());
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
-
-						contatoDAO.update(contato);
-						break;
-
-					case 4:
-						for (Contato c : contatoDAO.getContatos()) {
-							System.out.println("NOME: " + c.getNome());
-							System.out.println("IDADE: " + c.getIdade());
-							System.out.println("DATA CADASTRO: " + c.getDataCadastro());
-							System.out.println("----------------------------------- ");
-						}
-						break;
-					case 5:
-						System.out.println("Digite o ID:");
-						int id = entrada.nextInt();
-						
-						Contato c = contatoDAO.contatoById(id);
-						
-						System.out.println("NOME: " + c.getNome());
-						System.out.println("IDADE: " + c.getIdade());
-						System.out.println("DATA CADASTRO: " + c.getDataCadastro());
-						System.out.println("----------------------------------- ");
-						break;
-					case 0:
-						System.out.println("Ate logo!");
-						break;
-					default:
-						System.out.println("Opcao invalida!");
-						break;
-					}
-				} while (agenda != 0);
-
-				break;
-			case 5:
-				do {
-					System.out.println("========== Clientes ==========");
-					System.out.println("1 - Adicionar ");
-					System.out.println("2 - Remover ");
-					System.out.println("3 - Atualizar ");
-					System.out.println("4 - Mostrar ");
-					System.out.println("5 - Buscar Cliente");
-					System.out.println("0 - Sair");
-					agenda = entrada.nextInt();
-					switch (cli) {
-					case 1:
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
-
-						contatoDAO.save(contato);
-
-						break;
-					case 2:
-						System.out.println("Digite o ID que sera deletado:");
-						contatoDAO.removeById(entrada.nextInt());
-						break;
-					case 3:
-						System.out.println("Digite o ID do contato:");
-						contato.setId(entrada.nextInt());
-						System.out.println("Digite o nome:");
-						contato.setNome(entrada.next());
-						System.out.println("Digite a idade:");
-						contato.setIdade(entrada.nextInt());
-						contato.setDataCadastro(new Date());
-
-						contatoDAO.update(contato);
-						break;
-
-					case 4:
-						for (Contato c : contatoDAO.getContatos()) {
-							System.out.println("NOME: " + c.getNome());
-							System.out.println("IDADE: " + c.getIdade());
-							System.out.println("DATA CADASTRO: " + c.getDataCadastro());
-							System.out.println("----------------------------------- ");
-						}
-						break;
-					case 5:
-						System.out.println("Digite o ID:");
-						int id = entrada.nextInt();
-						
-						Contato c = contatoDAO.contatoById(id);
-						
-						System.out.println("NOME: " + c.getNome());
-						System.out.println("IDADE: " + c.getIdade());
-						System.out.println("DATA CADASTRO: " + c.getDataCadastro());
-						System.out.println("----------------------------------- ");
-						break;
-					case 0:
-						System.out.println("Ate logo!");
-						break;
-					default:
-						System.out.println("Opcao invalida!");
-						break;
-					}
-				} while (agenda != 0);
-
-				break;
+			break;
+//			case 4:
+//				do {
+//					System.out.println("========== Destino ==========");
+//					System.out.println("1 - Adicionar ");
+//					System.out.println("2 - Remover ");
+//					System.out.println("3 - Atualizar ");
+//					System.out.println("4 - Mostrar ");
+//					System.out.println("5 - Buscar Cliente");
+//					System.out.println("0 - Sair");
+//					des = entrada.nextInt();
+//					switch (des) {
+//					case 1:
+//						System.out.println("Digite o CPF:");
+//						hospedagem.setCpf(entrada.next());
+//						System.out.println("Digite o Nome:");
+//						hospedagem.setNome(entrada.next());
+//						System.out.println("Digite a Endereço:");
+//						hospedagem.setEndereco(entrada.next());
+//						System.out.println("Digite um Telefone:");
+//						hospedagem.setTel(entrada.next());
+//						System.out.println("Digite o E-mail:");
+//						hospedagem.setEmail(entrada.next());
+//						
+//						hospedagemDAO.save(hospedagem);
+//
+//						break;
+//					case 2:
+//						System.out.println("Digite o ID que sera deletado:");
+//						hospedagemDAO.removeById(entrada.nextInt());
+//						break;
+//					case 3:
+//						
+//						System.out.println("Digite o Nome:");
+//						hospedagem.setNome(entrada.next());
+//						System.out.println("Digite a Endereço:");
+//						hospedagem.setEndereco(entrada.next());
+//						System.out.println("Digite um Telefone:");
+//						hospedagem.setTel(entrada.next());
+//						System.out.println("Digite o E-mail:");
+//						hospedagem.setEmail(entrada.next());
+//						System.out.println("Digite o id:");
+//						hospedagem.setId(entrada.nextInt());
+//						
+//						hospedagemDAO.update(hospedagem);
+//						break;
+//
+//					case 4:
+//						for (Hospedagem h : hospedagemDAO.gethospedagem()) {
+//							System.out.println("CPF: " + h.getCpf());
+//							System.out.println("NOME: " + h.getNome());
+//							System.out.println("ENDEREÇO: " + h.getEndereco());
+//							System.out.println("TEL: " + h.getTel());
+//							System.out.println("EMAIL: " + h.getEmail());
+//							System.out.println("----------------------------------- ");
+//						}
+//						break;
+//					case 5:
+//						System.out.println("Digite o CPF:");
+//						int id = entrada.nextInt();
+//						
+//						Hospedagem h = hospedagemDAO.hosById(id);
+//						
+//						System.out.println("CPF: " + h.getCpf());
+//						System.out.println("NOME: " + h.getNome());
+//						System.out.println("ENDEREÇO: " + h.getEndereco());
+//						System.out.println("TEL: " + h.getTel());
+//						System.out.println("EMAIL: " + h.getEmail());
+//						System.out.println("----------------------------------- ");
+//						break;
+//					case 0:
+//						System.out.println("Ate logo!");
+//						break;
+//					default:
+//						System.out.println("Opcao invalida!");
+//						break;
+//					}
+//				} while (des != 0);
+//
+//				break;
+//			case 5:
+//					do {
+//				System.out.println("========== Hospedagem ==========");
+//				System.out.println("1 - Adicionar ");
+//				System.out.println("2 - Remover ");
+//				System.out.println("3 - Atualizar ");
+//				System.out.println("4 - Mostrar ");
+//				System.out.println("5 - Buscar Cliente");
+//				System.out.println("0 - Sair");
+//				res = entrada.nextInt();
+//				switch (res) {
+//				case 1:
+//					System.out.println("Digite o CPF:");
+//					hospedagem.setCpf(entrada.next());
+//					System.out.println("Digite o Nome:");
+//					hospedagem.setNome(entrada.next());
+//					System.out.println("Digite a Endereço:");
+//					hospedagem.setEndereco(entrada.next());
+//					System.out.println("Digite um Telefone:");
+//					hospedagem.setTel(entrada.next());
+//					System.out.println("Digite o E-mail:");
+//					hospedagem.setEmail(entrada.next());
+//					
+//					hospedagemDAO.save(hospedagem);
+//
+//					break;
+//				case 2:
+//					System.out.println("Digite o ID que sera deletado:");
+//					hospedagemDAO.removeById(entrada.nextInt());
+//					break;
+//				case 3:
+//					
+//					System.out.println("Digite o Nome:");
+//					hospedagem.setNome(entrada.next());
+//					System.out.println("Digite a Endereço:");
+//					hospedagem.setEndereco(entrada.next());
+//					System.out.println("Digite um Telefone:");
+//					hospedagem.setTel(entrada.next());
+//					System.out.println("Digite o E-mail:");
+//					hospedagem.setEmail(entrada.next());
+//					System.out.println("Digite o id:");
+//					hospedagem.setId(entrada.nextInt());
+//					
+//					hospedagemDAO.update(hospedagem);
+//					break;
+//
+//				case 4:
+//					for (Hospedagem h : hospedagemDAO.gethospedagem()) {
+//						System.out.println("CPF: " + h.getCpf());
+//						System.out.println("NOME: " + h.getNome());
+//						System.out.println("ENDEREÇO: " + h.getEndereco());
+//						System.out.println("TEL: " + h.getTel());
+//						System.out.println("EMAIL: " + h.getEmail());
+//						System.out.println("----------------------------------- ");
+//					}
+//					break;
+//				case 5:
+//					System.out.println("Digite o CPF:");
+//					int id = entrada.nextInt();
+//					
+//					Hospedagem h = hospedagemDAO.hosById(id);
+//					
+//					System.out.println("CPF: " + h.getCpf());
+//					System.out.println("NOME: " + h.getNome());
+//					System.out.println("ENDEREÇO: " + h.getEndereco());
+//					System.out.println("TEL: " + h.getTel());
+//					System.out.println("EMAIL: " + h.getEmail());
+//					System.out.println("----------------------------------- ");
+//					break;
+//				case 0:
+//					System.out.println("Ate logo!");
+//					break;
+//				default:
+//					System.out.println("Opcao invalida!");
+//					break;
+//				}
+//			} while (res != 0);
+//
+//			break;
 			default:
 				System.out.println("Opcao invalida!");
 				break;
 			}
-		} while (agenda != 0);
-		
-		
-		
-		
-	}
-
+		} while (menu != 0);
+		}
 }

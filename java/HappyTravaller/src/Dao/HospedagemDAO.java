@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import classes.Hospedagem;
-import Dao.Conexao;
 
 public class HospedagemDAO {
 
@@ -16,17 +15,16 @@ public class HospedagemDAO {
 
 	public void save(Hospedagem h) {
 
-		String sql = "INSERT INTO hospedagem(id_hos,nome_hos,endereco_hos,telefone_hos,valor_hos)" + " VALUE(?,?,?,?,?)";
+		String sql = "INSERT INTO hospedagem(nome_hos,endereco_hos,telefone_hos,valor_hos)" + " VALUE(?,?,?,?)";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, h.getId());
-			pstm.setString(2, h.getNome());
-			pstm.setString(3, h.getEndereco());
-			pstm.setString(4, h.getTel());
-			pstm.setDouble(5, h.getValor());
+			pstm.setString(1, h.getNome());
+			pstm.setString(2, h.getEndereco());
+			pstm.setString(3, h.getTel());
+			pstm.setDouble(4, h.getValor());
 
 			pstm.execute();
 
@@ -83,10 +81,11 @@ public class HospedagemDAO {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setString(2, h.getNome());
-			pstm.setString(3, h.getEndereco());
-			pstm.setString(4, h.getTel());
-			pstm.setDouble(5, h.getValor());
+			pstm.setString(1, h.getNome());
+			pstm.setString(2, h.getEndereco());
+			pstm.setString(3, h.getTel());
+			pstm.setDouble(4, h.getValor());
+			pstm.setInt(5, h.getId());
 
 			pstm.execute();
 

@@ -82,12 +82,12 @@ public class ClienteDAO {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setString(1, cliente.getCpf());
-			pstm.setString(2, cliente.getNome());
-			pstm.setString(3, cliente.getEndereco());
-			pstm.setString(4, cliente.getTel());
-			pstm.setString(5, cliente.getEmail());
-
+			
+			pstm.setString(1, cliente.getNome());
+			pstm.setString(2, cliente.getEndereco());
+			pstm.setString(3, cliente.getTel());
+			pstm.setString(4, cliente.getEmail());
+			pstm.setString(5, cliente.getCpf());
 			pstm.execute();
 
 		} catch (Exception e) {

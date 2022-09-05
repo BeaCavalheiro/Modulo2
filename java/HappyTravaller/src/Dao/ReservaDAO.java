@@ -20,20 +20,19 @@ public class ReservaDAO {
 
 	public void save(Reserva r) {
 
-		String sql = "INSERT INTO reserva (cod_res,inicio_res,final_res,preco_res,CPF_cli,id_hos,id_local,id)" + " VALUE(?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO reserva (inicio_res,final_res,preco_res,CPF_cli,id_hos,id_local,id)" + " VALUE(?,?,?,?,?,?,?)";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, r.getCod());
-			pstm.setInt(2, r.getEntrada());
-			pstm.setInt(3, r.getSaida());
-			pstm.setDouble(4, r.getTotal());
-			pstm.setString(5, r.getCliente().getCpf());
-			pstm.setInt(6, r.getHospedagem().getId());
-			pstm.setInt(7, r.getDestino().getId());
-			pstm.setInt(8, r.getTransporte().getId());
+			pstm.setInt(1, r.getEntrada());
+			pstm.setInt(2, r.getSaida());
+			pstm.setDouble(3, r.getTotal());
+			pstm.setString(4, r.getCliente().getCpf());
+			pstm.setInt(5, r.getHospedagem().getId());
+			pstm.setInt(6, r.getDestino().getId());
+			pstm.setInt(7, r.getTransporte().getId());
 			
 			pstm.execute();
 
@@ -89,13 +88,14 @@ public class ReservaDAO {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(2, r.getEntrada());
-			pstm.setInt(3, r.getSaida());
-			pstm.setDouble(4, r.getTotal());
-			pstm.setString(5, r.getCliente().getCpf());
-			pstm.setInt(6, r.getHospedagem().getId());
-			pstm.setInt(7, r.getDestino().getId());
-			pstm.setInt(8, r.getTransporte().getId());
+			pstm.setInt(1, r.getEntrada());
+			pstm.setInt(2, r.getSaida());
+			pstm.setDouble(3, r.getTotal());
+			pstm.setString(4, r.getCliente().getCpf());
+			pstm.setInt(5, r.getHospedagem().getId());
+			pstm.setInt(6, r.getDestino().getId());
+			pstm.setInt(7, r.getTransporte().getId());
+			pstm.setInt(8, r.getCod());
 
 			pstm.execute();
 

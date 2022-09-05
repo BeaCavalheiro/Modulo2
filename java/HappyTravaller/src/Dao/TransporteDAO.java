@@ -16,17 +16,16 @@ public class TransporteDAO {
 
 	public void save(Transporte t) {
 
-		String sql = "INSERT INTO transporte (id,nome_comp,aeroporto_rodoviaria,num_embarque,valor)" + " VALUE(?,?,?,?,?)";
+		String sql = "INSERT INTO transporte (nome_comp,aeroporto_rodoviaria,num_embarque,valor)" + " VALUE(?,?,?,?)";
 
 		try {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, t.getId());
-			pstm.setString(2, t.getNomeComp());
-			pstm.setString(3, t.getAerRod());
-			pstm.setString(4, t.getNumEmb());
-			pstm.setDouble(5, t.getValor());
+			pstm.setString(1, t.getNomeComp());
+			pstm.setString(2, t.getAerRod());
+			pstm.setString(3, t.getNumEmb());
+			pstm.setDouble(4, t.getValor());
 
 			pstm.execute();
 
@@ -82,10 +81,11 @@ public class TransporteDAO {
 			conn = Conexao.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setString(2, t.getNomeComp());
-			pstm.setString(3, t.getAerRod());
-			pstm.setString(4, t.getNumEmb());
-			pstm.setDouble(5, t.getValor());
+			pstm.setString(1, t.getNomeComp());
+			pstm.setString(2, t.getAerRod());
+			pstm.setString(3, t.getNumEmb());
+			pstm.setDouble(4, t.getValor());
+			pstm.setInt(5, t.getId());
 
 			pstm.execute();
 
