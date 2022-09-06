@@ -57,12 +57,15 @@ public class HPConsole {
 					System.out.println("5 - Buscar Cliente");
 					System.out.println("0 - Voltar");
 					cli = entrada.nextInt();
+					entrada.nextLine();					
 					switch (cli) {
+					
+					
 					case 1:
 						System.out.println("Digite o CPF:");
 						cliente.setCpf(entrada.next());
 						System.out.println("Digite o Nome:");
-						cliente.setNome(entrada.next());
+						cliente.setNome(entrada.nextLine());
 						System.out.println("Digite a Endereço:");
 						cliente.setEndereco(entrada.next());
 						System.out.println("Digite um Telefone:");
@@ -234,41 +237,43 @@ public class HPConsole {
 					break;
 				case 3:
 					
-					System.out.println("Digite o Nome:");
-					transporte.setNome(entrada.next());
-					System.out.println("Digite a Endereço:");
-					transporte.setEndereco(entrada.next());
-					System.out.println("Digite um Telefone:");
-					transporte.setTel(entrada.next());
-					System.out.println("Digite o E-mail:");
-					transporte.setEmail(entrada.next());
-					System.out.println("Digite o id:");
+					System.out.println("Digite o Nome da companhia:");
+					transporte.setNomeComp(entrada.next());
+					System.out.println("Digite Aeroporto / Rodoviaria:");
+					transporte.setAerRod(entrada.next());
+					System.out.println("Digite o N de Embarque:");
+					transporte.setNumEmb(entrada.next());
+					System.out.println("Digite o Valor:");
+					transporte.setValor(entrada.nextDouble());
+					System.out.println("Qual ID de cadatro?");
 					transporte.setId(entrada.nextInt());
 					
 					hospedagemDAO.update(hospedagem);
 					break;
 
 				case 4:
-					for (Hospedagem h : hospedagemDAO.gethospedagem()) {
-						System.out.println("CPF: " + h.getCpf());
-						System.out.println("NOME: " + h.getNome());
-						System.out.println("ENDEREÇO: " + h.getEndereco());
-						System.out.println("TEL: " + h.getTel());
-						System.out.println("EMAIL: " + h.getEmail());
+					for (Transporte t : transporteDAO.getTransporte()) {
+						System.out.println("ID: " + t.getId());
+						System.out.println("COMPANHIA: " + t.getNomeComp());
+						System.out.println("Aeroporto / Rodoviaria: " + t.getAerRod());
+						System.out.println("N.Embarque: " + t.getNumEmb());
+						System.out.println("VALOR: " + t.getValor());
+						
 						System.out.println("----------------------------------- ");
 					}
 					break;
 				case 5:
-					System.out.println("Digite o CPF:");
+					System.out.println("Digite o ID desejado:");
 					int id = entrada.nextInt();
 					
-					Hospedagem h = hospedagemDAO.hosById(id);
+					Transporte t = transporteDAO.transById(id);
 					
-					System.out.println("CPF: " + h.getCpf());
-					System.out.println("NOME: " + h.getNome());
-					System.out.println("ENDEREÇO: " + h.getEndereco());
-					System.out.println("TEL: " + h.getTel());
-					System.out.println("EMAIL: " + h.getEmail());
+					System.out.println("ID: " + t.getId());
+					System.out.println("COMPANHIA: " + t.getNomeComp());
+					System.out.println("Aeroporto / Rodoviaria: " + t.getAerRod());
+					System.out.println("N.Embarque: " + t.getNumEmb());
+					System.out.println("VALOR: " + t.getValor());
+					
 					System.out.println("----------------------------------- ");
 					break;
 				case 0:
@@ -281,88 +286,81 @@ public class HPConsole {
 			} while (tran != 0);
 
 			break;
-//			case 4:
-//				do {
-//					System.out.println("========== Destino ==========");
-//					System.out.println("1 - Adicionar ");
-//					System.out.println("2 - Remover ");
-//					System.out.println("3 - Atualizar ");
-//					System.out.println("4 - Mostrar ");
-//					System.out.println("5 - Buscar Cliente");
-//					System.out.println("0 - Sair");
-//					des = entrada.nextInt();
-//					switch (des) {
-//					case 1:
-//						System.out.println("Digite o CPF:");
-//						hospedagem.setCpf(entrada.next());
-//						System.out.println("Digite o Nome:");
-//						hospedagem.setNome(entrada.next());
-//						System.out.println("Digite a Endereço:");
-//						hospedagem.setEndereco(entrada.next());
-//						System.out.println("Digite um Telefone:");
-//						hospedagem.setTel(entrada.next());
-//						System.out.println("Digite o E-mail:");
-//						hospedagem.setEmail(entrada.next());
-//						
-//						hospedagemDAO.save(hospedagem);
-//
-//						break;
-//					case 2:
-//						System.out.println("Digite o ID que sera deletado:");
-//						hospedagemDAO.removeById(entrada.nextInt());
-//						break;
-//					case 3:
-//						
-//						System.out.println("Digite o Nome:");
-//						hospedagem.setNome(entrada.next());
-//						System.out.println("Digite a Endereço:");
-//						hospedagem.setEndereco(entrada.next());
-//						System.out.println("Digite um Telefone:");
-//						hospedagem.setTel(entrada.next());
-//						System.out.println("Digite o E-mail:");
-//						hospedagem.setEmail(entrada.next());
-//						System.out.println("Digite o id:");
-//						hospedagem.setId(entrada.nextInt());
-//						
-//						hospedagemDAO.update(hospedagem);
-//						break;
-//
-//					case 4:
-//						for (Hospedagem h : hospedagemDAO.gethospedagem()) {
-//							System.out.println("CPF: " + h.getCpf());
-//							System.out.println("NOME: " + h.getNome());
-//							System.out.println("ENDEREÇO: " + h.getEndereco());
-//							System.out.println("TEL: " + h.getTel());
-//							System.out.println("EMAIL: " + h.getEmail());
-//							System.out.println("----------------------------------- ");
-//						}
-//						break;
-//					case 5:
-//						System.out.println("Digite o CPF:");
-//						int id = entrada.nextInt();
-//						
-//						Hospedagem h = hospedagemDAO.hosById(id);
-//						
-//						System.out.println("CPF: " + h.getCpf());
-//						System.out.println("NOME: " + h.getNome());
-//						System.out.println("ENDEREÇO: " + h.getEndereco());
-//						System.out.println("TEL: " + h.getTel());
-//						System.out.println("EMAIL: " + h.getEmail());
-//						System.out.println("----------------------------------- ");
-//						break;
-//					case 0:
-//						System.out.println("Ate logo!");
-//						break;
-//					default:
-//						System.out.println("Opcao invalida!");
-//						break;
-//					}
-//				} while (des != 0);
-//
-//				break;
+			case 4:
+				do {
+					System.out.println("========== Destino ==========");
+					System.out.println("1 - Adicionar ");
+					System.out.println("2 - Remover ");
+					System.out.println("3 - Atualizar ");
+					System.out.println("4 - Mostrar ");
+					System.out.println("5 - Buscar Cliente");
+					System.out.println("0 - Sair");
+					des = entrada.nextInt();
+					switch (des) {
+					case 1:
+						System.out.println("Digite o Nome:");
+						destino.setNome(entrada.next());
+						System.out.println("Digite a Endereço:");
+						destino.setLocal(entrada.next());
+						System.out.println("Digite um Telefone:");
+						destino.setValor(entrada.nextDouble());
+						
+						hospedagemDAO.save(hospedagem);
+
+						break;
+					case 2:
+						System.out.println("Digite o ID que sera deletado:");
+						destinoDAO.removeById(entrada.nextInt());
+						break;
+					case 3:
+						
+						System.out.println("Digite o Nome:");
+						destino.setNome(entrada.next());
+						System.out.println("Digite a Endereço:");
+						destino.setLocal(entrada.next());
+						System.out.println("Digite um Telefone:");
+						destino.setValor(entrada.nextDouble());
+						System.out.println("Digite o id:");
+						destino.setId(entrada.nextInt());
+						
+						hospedagemDAO.update(hospedagem);
+						break;
+
+					case 4:
+						for (Destino d : destinoDAO.getDestino()) {
+							System.out.println("ID: " + d.getId());
+							System.out.println("Destino: " + d.getNome());
+							System.out.println("País/Estado: " + d.getLocal());
+							System.out.println("Valor dos Passeios: " + d.getValor());
+							
+							System.out.println("----------------------------------- ");
+						}
+						break;
+					case 5:
+						System.out.println("Digite o CPF:");
+						int id = entrada.nextInt();
+						
+						Destino d = destinoDAO.locById(id);
+						
+						System.out.println("ID: " + d.getId());
+						System.out.println("Destino: " + d.getNome());
+						System.out.println("País/Estado: " + d.getLocal());
+						System.out.println("Valor dos Passeios: " + d.getValor());
+						System.out.println("----------------------------------- ");
+						break;
+					case 0:
+						System.out.println("Ate logo!");
+						break;
+					default:
+						System.out.println("Opcao invalida!");
+						break;
+					}
+				} while (des != 0);
+
+				break;
 //			case 5:
 //					do {
-//				System.out.println("========== Hospedagem ==========");
+//				System.out.println("========== Reserva ==========");
 //				System.out.println("1 - Adicionar ");
 //				System.out.println("2 - Remover ");
 //				System.out.println("3 - Atualizar ");
